@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A1</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <!-- SPLASH SCREEN -->
+    <div id="splash" onclick="start()"> Click to start.</div>
+    <audio id="music" loop src="House Tears.mp3"></audio>
+    <script type="text/javascript">
+        function start() {
+            let splash = document.getElementById("splash");
+            splash.addEventListener("transitionend", () => {
+                document.getElementById("music").play();
+                splash.remove();
+            });
+
+            splash.classList.add("hide");
+        }
+    </script>
+
+    <!-- COVER -->
+    <div class="coverbox">
+        <video autoplay loop muted plays-inline class="cover">
+            <source src="cover_6.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- CONTENT -->
+    <section class="contentbox">
+        <div class="parallax">
+            <p class="text1 lightblue" id="text1">Do you come from <span class="babypink">DEEP HEAVEN</span></p>
+            <p class="text2 blue">or do you come from <span class="red">HELL?</span></p>
+            <img id="sky" src="element/1sky.png">
+            <img id="cloudL" src="element/1 cloud bg L.png">
+            <img id="cloudR" src="element/1 cloud bg R.png">
+            <img id="mountain" src="element/1 mountain 2.png">
+            <img id="cloudfront" src="element/1 clouds front.png">
+            <img id="foreground" src="element/1 n 2 foreground 4.png">
+            <img id="lilyglow" src="element/1 lily glow.png">
+            <img id="angel" src="element/1 angel.png">
+            <img id="bg2" src="element/2 bg 2.png">
+            <video autoplay loop muted plays-inline id="bg2vid">
+                <source src="element/2 bg.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- PARALLAX JS-->
+        <script>
+            let cloudL = document.getElementById('cloudL');
+            let cloudR = document.getElementById('cloudR');
+            let mountain = document.getElementById('mountain');
+            let foreground = document.getElementById('foreground');
+            let lilyglow = document.getElementById('lilyglow');
+            let bg2 = document.getElementById('bg2');
+            let angel = document.getElementById('angel');
+            let bg2vid = document.getElementById('bg2vid');
+            let text1 = document.getElementById('text1');
+
+
+            window.addEventListener('scroll', function () {
+                let value = window.scrollY;
+                cloudL.style.left = value * 0.2 + 'px';
+                cloudR.style.right = value * 0.2 + 'px';
+                mountain.style.top = value * 0.2 + 'px';
+                foreground.style.top = value * 0.4 + 'px';
+                lilyglow.style.top = value * 0.4 + 'px';
+                angel.style.top = value * 0.45 + 'px';
+                bg2.style.top = value * 0.6 + 'px';
+                bg2vid.style.top = value * 0.5 + 'px';
+                text1.style.top = value * 0.2 + 'px';
+
+            })
+        </script>
+
+        <div class="s3"> <!-- Its actually s3 and the rest -->
+            <p class="text3 semidarkblue hidden" id="t3_line1"> O Beauty? </p>
+            <p class="text3 semidarkblue hidden" id="t3_line2">Your eyes</p>
+            <p class="text3 hidden" id="t3_line3"><span class="lightblue">INFERNAL</span> and <span
+                    class="lightblue">DIVINE,</span> </p>
+
+            <img id="bg3" src="element/3 bg.png">
+            <img class="land" id="landportrait" src="element/2 land 3.png">
+            <img onclick="showHide()" id="eyeanimate" src="element/3 eye animate.gif"> <!-- ON CLICK -->
+            <img id="bg3ele" src="element/3 bg ele.png">
+
+            <div class="onclick hide">
+
+                <div class="s45box">
+                    <div>
+                        <p class="text5 darkblue fontbig hidden" id="t5_line1"> Pour out both </p>
+                    </div>
+                    <div>
+                        <p class="text5 darkblue fontbig hidden" id="t5_line2"> <span class="red">GOODNESS</span> and
+                            <span class="red">CRIME,</span> </p>
+                    </div>
+                    <div>
+                        <p class="text5 darkblue fontbig hidden" id="t5_line3">And for that </br>you can be compared to
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text5 red fontbig hidden" id="t5_line4"> WINE.</p>
+                    </div>
+                    <video id="s45video" autoplay muted plays-inline>
+                        <source src="element/4 5 animation 4.mp4" type="video/mp4">
+                    </video>
+
+                    <img class="s5eyes" src="element/5 eyes 3.gif">
+                    <img class="s5pttrn" src="element/5 pttrn.gif">
+                </div>
+
+                <div class="s67">
+                    <div class="s6box">
+
+                        <div class="parallax6">
+                            <img id="s6sky" src="element/6 sky.png">
+                            <div id="moon">
+                                <img id="s6moonlit" src="element/6 moonlit.png">
+                                <img id="s6moon" src="element/6 moon.png">
+                            </div>
+                            <img id="s6tree" src="element/6 tree.png">
+                            <img id="s6foreground" src="element/6 foreground.png">
+                            <img id="s6frame" src="element/6 frame.png">
+                        </div>
+
+                        <div id="s6star">
+                            <img class="star blinking--delay" id="star1" src="element/6 star.png">
+                            <img class="star blinking--fast" id="star2" src="element/6 star.png">
+                            <img class="star blinking--slow" id="star3" src="element/6 star.png">
+                            <img class="star blinking--reverse" id="star4" src="element/6 star.png">
+                            <img class="star" id="star5" src="element/6 star.png">
+                            <img class="star blinking--slow" id="star6" src="element/6 star.png">
+                            <img class="star blinking--delay" id="star7" src="element/6 star.png">
+                            <img class="star blinking--delay" id="star8" src="element/6 star.png">
+                            <img class="star blinking--delay" id="star9" src="element/6 star.png">
+                        </div>
+
+                        <script>
+                            let moon = document.getElementById('moon');
+                            let s6tree = document.getElementById('s6tree');
+                            let s6star = document.getElementById('s6star');
+
+
+                            window.addEventListener('scroll', function () {
+                                let value = window.scrollY;
+                                moon.style.top = value * 0.4 + 'px';
+                                s6tree.style.top = value * 0.2 + 'px';
+                                s6star.style.top = value * 0.2 + 'px';
+                            })
+                        </script>
+
+
+                        <div class="sunsetbox">
+                            <div class="s6sunset">
+                                <p class="text6 hidden">You contain in your eyes the <span class="yellow">SUNSET</span>
+                                    and <span class="yellow">DAWN,</span></p>
+                                <img src="element/6 sunset 2.png">
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text6_2 pink hidden">You scatter perfumes </br>like a <span
+                                    class="lightblue">STORMY NIGHT,</span></p>
+                        </div>
+
+                        <div>
+                            <img class="s67lily reveal" src="element/6 7 lily 2.png">
+                        </div>
+                    </div>
+
+                    <div class="s7box">
+                        <div class="text7box">
+                            <p class="text7 hidden" id="t7_1">Your <span class="lightblue">KISSES</span> are a <span
+                                    class="lightblue">PHILTRE</span> </br>and your <span class="lightblue">MOUTH</span>
+                                an
+                                <span class="lightblue">AMPHORA</span>
+                            </p>
+                            <p class="text7 hidden" id="t7_2">Which make the <span class="lightblue">HERO</span> a <span
+                                    class="lightblue">COWARD</span> </br>and the <span class="lightblue">CHILD
+                                    COURAGEOUS.</span></p>
+                        </div>
+                        <video autoplay loop muted plays-inline class="s7video reveal">
+                            <source src="element/s7.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+                </div>
+
+                <div class="s8box">
+                    <p class="text8 " id="t8_1_1">Do you come from a <span class="lightblue">BLACK ABYSS </span></p>
+                    <p class="text8" id="t8_1_2"> or do you come down from the <span class="lightblue">STARS?</span></p>
+                    <p class="text8_2" id="t8_1">Charmed Destiny</p>
+                    <p class="text8_2" id="t8_2"> follows your skirts </br>like a dog </p>
+                    <video autoplay loop muted plays-inline class="s8">
+                        <source src="element/s8.mp4" type="video/mp4">
+                    </video>
+                    <div class="cursor"></div>
+                </div>
+
+                <!-- 9 10 11 -->
+
+                <div class="S9_11Box">
+                    <div class="s9skybox"><img class="s9sky" src="element/9 sky 3.png"></div>
+                    <div class="s9maskRbox"><img class="s9maskR" src="element/9 mask R 2.png"></div>
+                    <div class="s9maskLbox"><img class="s9maskL" src="element/9 mask L 3.png"></div>
+                    <div>
+                        <p class="text9 pink ">At random you sow <span class="lightblue">JOY</span> and <span
+                                class="lightblue">DISASTERS,</span>
+                            </br> And you <span class="lightblue">GOVERN ALL</span> and <span class="lightblue">ANSWER
+                                FOR NOTHING.</span> </p>
+                    </div>
+
+                    <div class="S9_11Content">
+
+                        <div class="s9_10">
+                            <img class="s9bg" src="element/9 10 - 5.png">
+                            <img class="s9hill" src="element/9 hill 2.png">
+
+                            <div>
+                                <p class="text10">You <span class="lightblue">WALK</span> over the <span
+                                        class="lightblue">DEAD</span>, O Beauty, and <span class="lightblue">MOCK</span>
+                                    them.
+                                    </br> Among your jewels, Horror is not the least charming,
+                                    </br> And Murder, among your dearest baubles,
+                                    </br> <span class="lightblue">DANCES</span> amorously on your <span
+                                        class="lightblue">PROUD BODY.</span></p>
+                            </div>
+                            <img class="s10mothAll" id="s10moth" src="element/10 moth 2.png">
+                            <img class="s10mothAll" id="s10mothbg" src="element/10 moth bg.png">
+
+                            <div class="s10faceBox">
+                                <img class="s10face" src="element/10 faces 2.png">
+                            </div>
+                        </div>
+
+                        <div class="s11">
+                            <div class="text11box">
+                                <p class="text11 hidden">The <span class="lightblue">DAZZLED MOTH</span> flies to you,
+                                    <span class="lightblue">A CANDLE,</span>
+                                    </br>Crackles, flames and says: <span class="lightblue">Let us bless this
+                                        torch!</span></p>
+                            </div>
+
+                            <div class="s11box">
+                                <video autoplay muted plays-inline class="s11video">
+                                    <source src="element/s11_2.mp4" type="video/mp4">
+                                </video>
+
+                                <div>
+                                    <p class="text11_2 hidden" id="t11_2_1">The <span class="lightblue">PAINTING
+                                            LOVER</span> <br>bending
+                                        over <span class="lightblue">HIS MISTRESS</span></p>
+                                </div>
+                                <div>
+                                    <p class="text11_2 hidden" id="t11_2_2">Resembles <span class="lightblue">A DYING
+                                            MAN</span>
+                                        <br>caressing his <span class="lightblue">TOMB.</span>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="end">The End.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <!-- SHOW&HIDE -->
+        <script type="text/javascript">
+            let onclick = document.querySelector(".onclick");
+            function showHide() {
+                onclick.classList.toggle("hide");
+            }
+        </script>
+
+        <!-- REVEAL -->
+        <script type="text/javascript">
+            window.addEventListener('scroll', reveal);
+            function reveal() {
+                var reveals = document.querySelectorAll('.reveal')
+
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowheight = window.innerHeight;
+                    var revealtop = reveals[i].getBoundingClientRect().top;
+                    var revealpoint = 400;
+
+                    if (revealtop < windowheight - revealpoint) {
+                        reveals[i].classList.add('active');
+                    }
+
+                    else {
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+
+                    else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            });
+
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach((el) => observer.observe(el));
+        </script>
+
+        <!-- CURSOR MOVE -->
+        <script type="text/javascript">
+            var pos = document.documentElement;
+            pos.addEventListener('mousemove', e => {
+                pos.style.setProperty('--x', e.clientX + 'px')
+                pos.style.setProperty('--y', e.clientY + 'px')
+            })
+        </script>
+    </section>
+</body>
+
+</html>
